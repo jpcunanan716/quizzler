@@ -1,0 +1,95 @@
+#root {
+  margin: 0 auto;
+  text-align: center;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: white; 
+  
+}
+.rootstyle{
+  background-color:white;
+}
+
+.navbar{
+  background-color: #103c1c;
+}
+.navbarlogo {
+  font-size: 30px;
+  padding: .5em;
+  will-change: filter;
+  transition: filter 300ms;
+  text-decoration: none;
+  color: white;
+  font-family: "Righteous", serif;
+  font-weight: 400;
+  font-style: normal; 
+}
+
+.navbarlogo:hover {
+  filter: drop-shadow(0 0 1em #868bf1aa);
+}
+.navbarlogo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+.menu-container {
+  width: 100%;
+  min-height: 100vh; /* Full viewport height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Form styles with image background */
+.form-content {
+  background-image: url('https://images.unsplash.com/photo-1578593139939-cccb1e98698c?q=80&w=1793&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); /* Replace with your image path */
+  background-size: cover; /* Ensure the image covers the form */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Prevent tiling */
+  border-radius: 10px; /* Rounded corners */
+  max-width: 1000px; /* Limit width for responsiveness */
+  width: 100%;
+  box-shadow: 0 4px 15px rgb(6, 6, 6); /* Add shadow for a pop-out effect */
+  position: relative;
+  overflow: hidden;
+}
+
+.overlay {
+  background-color: rgb(255, 255, 255); /* Dark overlay with transparency */
+  border-radius: 10px; /* Match the form border radius */
+  color: black; /* Ensure text is visible */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .form-content {
+    padding: 20px; /* Adjust padding for smaller screens */
+  }
+}
+
+
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
