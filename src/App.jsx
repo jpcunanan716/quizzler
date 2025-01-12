@@ -2,7 +2,6 @@ import Navbar from './components/Navbar'
 import Menu from './pages/Menu'
 import Quiz from './pages/Quiz'
 import Result from './pages/Result'
-import "./App.css"
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
 const App = () => {

@@ -39,7 +39,7 @@ const Menu = () => {
       >
         <div className="overlay p-3 w-50">
           <div>
-            <div className="h3 my-3">Select Category</div>
+            <div className="h2 my-3">Select Category</div>
             {categories.map((cat) => (
               <div
                 key={cat.value}
@@ -59,7 +59,7 @@ const Menu = () => {
           </div>
 
           <div>
-            <div className="h3 my-3">Select Difficulty</div>
+            <div className="h2 my-3">Select Difficulty</div>
             {difficulty.map((option) => (
               <div
                 key={option}
@@ -79,11 +79,14 @@ const Menu = () => {
           </div>
 
           <button
-            className={`btn btn-primary w-100 my-3 ${
-              formData.category === '' || formData.difficulty === '' ? 'disabled' : ''
-            }`}
+           type="submit"
+           className={`start-btn w-100 my-3 ${
+             formData.category === '' || formData.difficulty === '' ? 'disabled' : ''
+           }`}
+           disabled={formData.category === '' || formData.difficulty === ''}
+         
           >
-            Submit
+            Start
           </button>
         </div>
       </Form>
