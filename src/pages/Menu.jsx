@@ -45,13 +45,8 @@ const Menu = () => {
                 key={cat.value}
                 onClick={() => selectCategory(cat.value)}
                 className={`category-option p-2 my-2 text-center ${
-                  formData.category === cat.value ? 'bg-success text-white' : ''
+                  formData.category === cat.value ? 'selected' : ''
                 }`}
-                style={{
-                  cursor: 'pointer',
-                  border: '1px solid #ccc',
-                  borderRadius: '5px',
-                }}
               >
                 {cat.label}
               </div>
@@ -65,13 +60,8 @@ const Menu = () => {
                 key={option}
                 onClick={() => selectDifficulty(option)}
                 className={`difficulty-option p-2 my-2 text-center ${
-                  formData.difficulty === option ? 'bg-success text-white' : ''
+                  formData.difficulty === option ? 'selected' : ''
                 }`}
-                style={{
-                  cursor: 'pointer',
-                  border: '1px solid #ccc',
-                  borderRadius: '5px',
-                }}
               >
                 {option}
               </div>
@@ -80,7 +70,7 @@ const Menu = () => {
 
           <button
            type="submit"
-           className={`start-btn w-100 my-3 ${
+           className={`start-btn justify-content-center w-100 my-3 ${
              formData.category === '' || formData.difficulty === '' ? 'disabled' : ''
            }`}
            disabled={formData.category === '' || formData.difficulty === ''}

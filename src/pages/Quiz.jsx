@@ -67,18 +67,17 @@ const Quiz = () => {
   const questions = result.data.results
 
   return (
-    <div className="text-black">
-      <div className="container my-5">
-        <div className="d-flex flex-column justify-content-start align-items-start">
-          <div className="d-flex flex-row justify-content-between align-items-center w-100 my-2">
-            <div className="bg-info p-2 rounded-1">
+    <div className="quiz-container d-flex flex-column align-items-center justify-content-center">
+      <div className="quiz-content my-2 d-flex flex-column align-items-center justify-content-center p-3">
+        <div className="d-flex flex-row justify-content-between align-items-center w-100 my-2">
+            <div className="bg-info d-flex justify-content-start p-2 rounded-1">
               {categories.find(cat => cat.value === Number(category)).label}
             </div>
-            <div className="bg-warning p-2 rounded-1">
+            <div className="bg-warning justify-content-end p-2 rounded-1"> 
               {difficulty}
             </div>
           </div>
-         
+        <div className="d-flex flex-column justify-content-center align-items-center">
         </div>
         <span className="my-2">Question {currentQuestion + 1}/10</span>
         <div className="my-4 d-flex flex-column justfy-content-center">
@@ -89,7 +88,7 @@ const Quiz = () => {
           />
           {questions.length === currentQuestion + 1 ? (
             <button
-              className={`btn btn-primary align-self-end ${
+              className={`btn btn-primary align-self-center ${
                 isAnswered === false && 'disabled'
               }`}
               onClick={finishQuiz}
@@ -98,17 +97,19 @@ const Quiz = () => {
             </button>
           ) : (
             <button
-              className={`btn btn-primary align-self-end ${
+              className={`btn btn-primary align-self-center ${
                 isAnswered === false && 'disabled'
               }`}
               onClick={nextQuestion}
             >
               Next
             </button>
+            
           )}
           </div>
         </div>
       </div>
+
   )
 }
 

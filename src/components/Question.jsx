@@ -45,12 +45,12 @@ const Question = ({ question, setIsAnswered, isAnswered }) => {
               <button
                 key={i}
                 type="button"
-                className={`list-group-item list-group-item-action my-1 rounded-pill disabled ${
-                  opt === question.correct_answer && 'bg-success border border-success text-white'
+                className={`quiz-button-after list-group-item-action my-3 rounded-pill disabled ${
+                  opt === question.correct_answer && 'border border-success  border-4 text-black'
                 } ${
                   opt === selectedOption &&
                     opt !== question.correct_answer &&
-                    'bg-danger border border-danger text-white'
+                    'border border-danger border-4 text-black'
                 }`}
                 disabled
                 onClick={() => selectOption(opt)}
@@ -62,7 +62,7 @@ const Question = ({ question, setIsAnswered, isAnswered }) => {
               <button
                 key={i}
                 type="button"
-                className="list-group-item list-group-item-action my-1 rounded-pill"
+                className="quiz-button list-group-item-action my-3 rounded-pill"
                 onClick={() => selectOption(opt)}
               >
                 <div dangerouslySetInnerHTML={{ __html: opt }} />
