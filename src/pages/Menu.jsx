@@ -70,7 +70,7 @@ const Menu = () => {
 
           <button
            type="submit"
-           className={`start-btn justify-content-center w-100 my-3 ${
+           className={`start-btn justify-content-center w-100 rounded-3 my-3 text-white ${
              formData.category === '' || formData.difficulty === '' ? 'disabled' : ''
            }`}
            disabled={formData.category === '' || formData.difficulty === ''}

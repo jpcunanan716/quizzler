@@ -34,23 +34,25 @@ const Result = () => {
   const highScorePercentage = highscore === null ? 0 : Math.round((highscore / 10) * 100)
 
   return (
-    <div className="container d-flex flex-column align-items-center justify-content-center my-5">
-      <div className="h3">RESULT</div>
-      <div
-        className={`${
-          scorePercentage > 40 ? 'bg-success' : 'bg-danger'
-        } my-2 w-100 p-3 rounded-pill text-center`}
-      >
-        You scored {score} out of {10} ({scorePercentage}%)
-      </div>
-      <div className="my-2">Highscore: {highscore || 0} ({highScorePercentage}%)</div>
-      <div className="d-flex flex-row align-items-center justify-content-center my-3 w-100 ">
-        <button className="btn btn-info w-25 mx-3" onClick={goToMainMenu}>
-          Main Menu
-        </button>
-        <button className="btn btn-info w-25 mx-3" onClick={retakeQuiz}>
-          Retake Quiz
-        </button>
+    <div className="result-container d-flex flex-column align-items-center justify-content-center my-5">
+      <div className="result-content my-2 d-flex flex-column align-items-center justify-content-center p-3">
+        <div className="h1">RESULT</div>
+        <div
+          className={`${
+            scorePercentage > 40 ? 'bg-success' : 'bg-danger'
+          } my-2 w-50 p-3 rounded-pill text-center`}
+        >
+          You scored {score} out of {10} ({scorePercentage}%)
+        </div>
+        <div className="my-2">Highscore: {highscore || 0} ({highScorePercentage}%)</div>
+        <div className="d-flex flex-row align-items-center justify-content-center my-3 w-100 ">
+          <button className="result-btn rounded-3 w-25 mx-3" onClick={goToMainMenu}>
+            Main Menu
+          </button>
+          <button className="result-btn rounded-3 w-30 mx-3" onClick={retakeQuiz}>
+          ↻ Retake Quiz
+          </button>
+        </div>
       </div>
     </div>
   )

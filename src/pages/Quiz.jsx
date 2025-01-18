@@ -70,10 +70,13 @@ const Quiz = () => {
     <div className="quiz-container d-flex flex-column align-items-center justify-content-center">
       <div className="quiz-content my-2 d-flex flex-column align-items-center justify-content-center p-3">
         <div className="d-flex flex-row justify-content-between align-items-center w-100 my-2">
-            <div className="bg-info d-flex justify-content-start p-2 rounded-1">
+            <div className="category-label d-flex justify-content-start p-2 rounded-1">
               {categories.find(cat => cat.value === Number(category)).label}
             </div>
-            <div className="bg-warning justify-content-end p-2 rounded-1"> 
+            <div
+              className={`difficulty-label justify-content-end p-2 rounded-1 ${
+                difficulty === 'easy' ? 'easy' : difficulty === 'medium' ? 'medium' : 'hard'
+              }`}>
               {difficulty}
             </div>
           </div>
@@ -88,21 +91,23 @@ const Quiz = () => {
           />
           {questions.length === currentQuestion + 1 ? (
             <button
-              className={`btn btn-primary align-self-center ${
+              className={`quizpage-btn align-self-center rounded-3 text-white ${
                 isAnswered === false && 'disabled'
               }`}
               onClick={finishQuiz}
+              disabled={!isAnswered}
             >
-              Finish
+              See Results ➜
             </button>
           ) : (
             <button
-              className={`btn btn-primary align-self-center ${
+              className={`quizpage-btn align-self-center rounded-3 text-white ${
                 isAnswered === false && 'disabled'
               }`}
               onClick={nextQuestion}
+              disabled={!isAnswered}
             >
-              Next
+              Next ➜
             </button>
             
           )}
